@@ -1,3 +1,4 @@
+
 const NEWS_SEARCH_URL = 'https://content.guardianapis.com/section';
 
 function getDataFromApi(searchTerm, callback) {
