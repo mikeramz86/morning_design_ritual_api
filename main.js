@@ -1,13 +1,12 @@
 
-const NEWS_SEARCH_URL = 'https://content.guardianapis.com/section';
+const NEWS_SEARCH_URL = 'https://content.guardianapis.com/search';
 
-function getDataFromApi(searchTerm, callback) {
+function getDataFromApi(callback) {
   const settings = {
     url: NEWS_SEARCH_URL,
     data: {
-      q: `${searchTerm}`,
+      q: 'business',
       key: 'bbf4d829-c55d-4dca-b2d3-addc895cb3d2',
-      section: 'Art and Design',
       max_Results: 5
     },
     dataType: 'json',
@@ -19,13 +18,8 @@ function getDataFromApi(searchTerm, callback) {
 }
 
 function renderResult(result) {
-    return `
-        <div>
-            <h2>
-                ${result.WebTitle}
-            </h2>
-        
-        </div>`
+        $(".js-news").append('result.results.webTitle');
+
 }
 
 getDataFromApi();
