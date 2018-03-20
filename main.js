@@ -1,31 +1,21 @@
-const NEWS_SEARCH_URL = 'https://content.guardianapis.com/section';
+var weather;
 
-function getDataFromApi(searchTerm, callback) {
-  const settings = {
-    url: NEWS_SEARCH_URL,
-    data: {
-      q: `${searchTerm}`,
-      key: 'bbf4d829-c55d-4dca-b2d3-addc895cb3d2',
-      section: 'Art and Design',
-      max_Results: 5
-    },
-    dataType: 'json',
-    type: 'GET',
-    success: callback
-  };
+var url = 'http://api.openweathermap.org/data/2.5/weather?q=Portland&APPID=2ba09e63b596e2cf8a13f62cadc938ea&units=metric';
 
-  $.ajax(settings);
+function setup() {
+    createCanvas(400,200);
+    loadJSON(url,gotData);
 }
 
-function renderResult(result) {
-    return `
-        <div>
-            <h2>
-                ${result.WebTitle}
-            </h2>
-        
-        </div>`
+function gotData(data) {
+    weather = data;
 }
 
-getDataFromApi();
-renderResult();
+function draw() {
+    backround(0);
+    if (weather) {
+        var temp = wather.main.temp;
+        var humidity = weather.main.humidty;
+        return temp
+    }
+}
