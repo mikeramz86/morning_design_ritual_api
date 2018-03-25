@@ -23,14 +23,14 @@ function renderResult(result) {
             <div> 
                 <p>${result.webTitle}</p>
                 <p>${result.sectionName}</p>
+                <p>${result.webUrl}</p>
             </div>
             `;
 
 }
 
 function displayNewsData(data) {
-    console.log(data)
-    const showResults = data.results.map((item, index) => renderResult(item));
+    const showResults = data.response.results.map((item, index) => renderResult(item));
     $('.js-news').html(showResults);
 }
 
