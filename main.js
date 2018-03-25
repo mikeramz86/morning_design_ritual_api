@@ -9,6 +9,7 @@ function getDataFromApi(searchTerm, callback) {
         data: {
             q: `${searchTerm}`,
             'api-key': 'bbf4d829-c55d-4dca-b2d3-addc895cb3d2',
+            total: 4
         },
         dataType: 'json',
         type: 'GET',
@@ -21,9 +22,7 @@ function getDataFromApi(searchTerm, callback) {
 function renderResult(result) {
     return `
             <div> 
-                <p>${result.webTitle}</p>
-                <p>${result.sectionName}</p>
-                <p>${result.webUrl}</p>
+                <a href="${result.webUrl}" target="_blank">${result.webTitle}</a>
             </div>
             `;
 
@@ -35,11 +34,11 @@ function displayNewsData(data) {
 }
 
 
-// function displayQuote() {
-//     $.getJSON("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(a) {
-//         $(".js-quote").append(a[0].content + "<p>— " + a[0].title + "</p>")
-//     });
-// }
+function displayQuote() {
+    $.getJSON("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(a) {
+        $(".js-quote").append(a[0].content + "<p>— " + a[0].title + "</p>")
+    });
+}
 
 
 
