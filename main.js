@@ -8,7 +8,7 @@ function getDataFromApi(searchTerm, callback) {
         url: NEWS_SEARCH_URL,
         data: {
             q: `${searchTerm}`,
-            key: 'bbf4d829-c55d-4dca-b2d3-addc895cb3d2',
+            'api-key': 'bbf4d829-c55d-4dca-b2d3-addc895cb3d2',
         },
         dataType: 'json',
         type: 'GET',
@@ -29,6 +29,7 @@ function renderResult(result) {
 }
 
 function displayNewsData(data) {
+    console.log(data)
     const showResults = data.results.map((item, index) => renderResult(item));
     $('.js-news').html(showResults);
 }
