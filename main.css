@@ -4,3 +4,6 @@
     padding: 0;
   }
   
+  .js-news {
+    border: 1px solid black;
+  }
