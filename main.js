@@ -3,7 +3,7 @@
 
 const NEWS_SEARCH_URL = 'http://content.guardianapis.com/search';
 const DESIGN_QUOTE_URL = 'http://quotesondesign.com/wp-json/posts';
-const SUNRISE_SUNSET_URL = 'https://api.sunrise-sunset.org/json'
+const SUNRISE_SUNSET_URL = 'https://api.sunrise-sunset.org/json';
 //https://api.sunrise-sunset.org/json?lat=45.5202&lng=-122.6742&date=today
 /* ---------------------------------------get Data from API-------------------------------------------- */
 function getDataFromApi(searchTerm, callback) {
@@ -22,20 +22,20 @@ function getDataFromApi(searchTerm, callback) {
     $.ajax(settings);
 }
 
-// function getDesignDataFromAPI(callback) {
-//     const settings = {
-//         url: DESIGN_QUOTE_URL,
-//         data: {
-//             'filter[orderby]': 'rand&filter',
-//             posts_per_page: 1
-//         },
-//         dataType: 'json',
-//         type: 'GET',
-//         success: callback
-//     };
+function getDesignDataFromAPI(callback) {
+    const settings = {
+        url: DESIGN_QUOTE_URL,
+        data: {
+            'filter[orderby]': 'rand&filter',
+            posts_per_page: 1
+        },
+        dataType: 'json',
+        type: 'GET',
+        success: callback
+    };
 
-//     $.ajax(settings);
-// }
+    $.ajax(settings);
+}
 
 function getSunDataFromAPI(callback) {
     const settings = {
@@ -69,16 +69,6 @@ function renderResult(result) {
 //     `
 // }
 
-function renderSunResult(sunResult) {
-    console.log(sunResult);
-    return `
-    <div class="js-sun">
-        <p>${sunResult.sunrise}</p>
-        <p>${sunResult.sunset}</p>
-        <p>${sunResult.day_length}</p>
-    </div>
-    `;
-}
 
 /* ---------------------------------------DISPLAY DATA-------------------------------------------- */
 
@@ -92,36 +82,25 @@ function displayNewsData(data) {
 //     $('.js-quotes').html(showDesignResults);
 // }
 
-// function displaySunData(sunData) {
-//     console.log(sunData);
-//     const showSunResults = sunData.results.map((item) => renderSunResult(item));
-//     $('.js-sun').html(showSunResults);
-// }
-
-// function displaySunData(sunData) {
-//     console.log(sunData);
-//     const showSunResults = sunData.results;
-//     $('.js-sun').html(showSunResults);
-// }
 
 function displaySunData(sunData) {
     // console.log(sunData);
     // const showSunResults = sunData.results
     // .map((item) => renderSunResult(item));
     let sunResultText = `
-        <div>${sunData.results.sunrise}</div>
-        <div>${sunData.results.sunset}</div>
-        <div>${sunData.results.day_length}</div>`
+            <div>${sunData.results.sunrise}</div>
+            <div>${sunData.results.sunset}</div>
+            <div>${sunData.results.day_length}</div>`
     $('.js-sun').html(sunResultText);
 }
 
 
 
-// function displayQuote() {
-//     $.getJSON("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(a) {
-//         $(".js-quote").append(a[0].content + "<p>— " + a[0].title + "</p>")
-//     });
-// }
+function displayQuote() {
+    $.getJSON("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(a) {
+        $(".js-quote").append(a[0].content + "<p>— " + a[0].title + "</p>")
+    });
+}
 
 
 /* ---------------------------------------WATCH SUBMIT------------------------------------------- */
