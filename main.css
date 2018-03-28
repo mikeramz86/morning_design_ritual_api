@@ -5,16 +5,18 @@
   }
 
   body {
-    background-color: black;
+
   }
   
-  .news {
+  .js-news {
     border: 1px solid black;
+    margin: 30px;
   }
 
-  .sun {
-    background-color: aqua;
+  .js-sun {
+    background-color: grey;
     border: 1px solid black;
     width: 200px;
-    height: 400px;
+    height: 75px;
+    padding: auto;
   }
