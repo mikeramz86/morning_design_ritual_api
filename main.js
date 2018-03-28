@@ -72,11 +72,12 @@ function renderResult(result) {
 function renderSunResult(sunResult) {
     console.log(sunResult);
     return `
-    <p>${sunResult.sunrise}</p>
-    <p>${sunResult.sunset}</p>
-    <p>${sunResult.day_length}</p>
-    `
-
+    <div class="js-sun">
+        <p>${sunResult.sunrise}</p>
+        <p>${sunResult.sunset}</p>
+        <p>${sunResult.day_length}</p>
+    </div>
+    `;
 }
 
 /* ---------------------------------------DISPLAY DATA-------------------------------------------- */
@@ -91,11 +92,29 @@ function displayNewsData(data) {
 //     $('.js-quotes').html(showDesignResults);
 // }
 
+// function displaySunData(sunData) {
+//     console.log(sunData);
+//     const showSunResults = sunData.results.map((item) => renderSunResult(item));
+//     $('.js-sun').html(showSunResults);
+// }
+
+// function displaySunData(sunData) {
+//     console.log(sunData);
+//     const showSunResults = sunData.results;
+//     $('.js-sun').html(showSunResults);
+// }
+
 function displaySunData(sunData) {
-    console.log(displaySunData);
-    const showSunResults = sunData.results.map((item,index) => renderSunResult(item));
-    $('.js-sun').html(showSunResults);
+    // console.log(sunData);
+    // const showSunResults = sunData.results
+    // .map((item) => renderSunResult(item));
+    let sunResultText = `
+        <div>${sunData.results.sunrise}</div>
+        <div>${sunData.results.sunset}</div>
+        <div>${sunData.results.day_length}</div>`
+    $('.js-sun').html(sunResultText);
 }
+
 
 
 // function displayQuote() {
