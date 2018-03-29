@@ -3,25 +3,63 @@
     margin: 0;
     padding: 0;
     font-family: libre baskerville;
-    
+
   }
 
 
-  .js-news {
-    margin: 30px;
-    border: 1px solid grey;
+
+  body {
+    position: relative;
+  }
+
+  header {
+    position: relative;
+    display: block;
+    padding: 15px;
+    margin-bottom: 50px;
+    background-color: #d9a881;
+    color: white;
+  }
+
+.js-quotes {
+ text-align: center;
+ border: 1px solid grey;
+ display: block;
+ padding: 15px;
+margin-left: 20px;
+margin-right: 20px;
+margin-bottom: 20px;
+}
+
+  /* .js-news {
+  } */
+
+
+  form {
+    border: 1px solid black;
+    display: block;
+    padding: 15px;
+    margin-left: 20px;
   }
 
   .js-sun {
-    background-color: grey;
+    display: block;
+    background-color:#e3d5c6;
     border: 1px solid black;
-    width: 200px;
-    height: 75px;
-    padding: auto;
-    margin: 20px;
-    padding: 5px;
+    padding: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
   }
 
-  .results {
-    display: inline-block;
+  .js-search-form {
+    display: block;
   }
+
+  input button {
+    display: block;
+  }
+
+  /* .results {
+    display: block;
+  } */

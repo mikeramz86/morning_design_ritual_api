@@ -92,6 +92,7 @@ function displaySunData(sunData) {
     // const showSunResults = sunData.results
     // .map((item) => renderSunResult(item));
     let sunResultText = `
+            <h3> Mindful Day </h3>
             <div>Sunrise: ${sunData.results.sunrise}</div>
             <div>Sunset: ${sunData.results.sunset}</div>
             <div>Day Length: ${sunData.results.day_length}</div>`
