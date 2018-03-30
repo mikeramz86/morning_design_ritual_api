@@ -2,7 +2,7 @@
 
 
 const NEWS_SEARCH_URL = 'http://content.guardianapis.com/search';
-// const DESIGN_QUOTE_URL = 'https://quotesondesign.com/wp-json/posts';
+const QUOTE_URL = 'https://favqs.com/api/qotd';
 const SUNRISE_SUNSET_URL = 'https://api.sunrise-sunset.org/json';
 //https://api.sunrise-sunset.org/json?lat=45.5202&lng=-122.6742&date=today
 /* ---------------------------------------get Data from API-------------------------------------------- */
@@ -22,20 +22,16 @@ function getDataFromApi(searchTerm, callback) {
     $.ajax(settings);
 }
 
-// function getDesignDataFromAPI(callback) {
-//     const settings = {
-//         url: DESIGN_QUOTE_URL,
-//         data: {
-//             'filter[orderby]': 'rand&filter',
-//             posts_per_page: 1
-//         },
-//         dataType: 'json',
-//         type: 'GET',
-//         success: callback
-//     };
+function getDesignDataFromAPI(callback) {
+    const settings = {
+        url: QUOTE_URL,
+        dataType: 'json',
+        type: 'GET',
+        success: callback
+    };
 
-//     $.ajax(settings);
-// }
+    $.ajax(settings);
+}
 
 function getSunDataFromAPI(callback) {
     const settings = {
@@ -63,16 +59,14 @@ function renderResult(result) {
 
 }
 
-// function renderDesignResult(designResult) {
-//     return `
-//         result[0].content + "<p>— " + results[0].title + "</p>
-//     `
-// }
 
-$.getJSON("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&_jsonp=mycallback", function(a) {
-    console.log('hello world');
-  $(".js-quotes").append(a[0].content + "<p>— " + a[0].title + "</p>")
-});
+function renderDesignResult(designResult) {
+    console.log(designResult);
+    return `
+        result[0].content + "<p>— " + results[0].title + "</p>
+    `
+}
+
 
 /* ---------------------------------------DISPLAY DATA-------------------------------------------- */
 
@@ -81,22 +75,20 @@ function displayNewsData(data) {
     $('.js-news').html(showResults);
 }
 
-// function displayDesignData(data) {
-//     const showDesignResults = data.content.map((item,index) => renderDesignResult(item));
-//     $('.js-quotes').html(showDesignResults);
-// }
-
 
 function displaySunData(sunData) {
-    // console.log(sunData);
-    // const showSunResults = sunData.results
-    // .map((item) => renderSunResult(item));
     let sunResultText = `
             <h3> Mindful Day </h3>
             <div>Sunrise: ${sunData.results.sunrise}</div>
             <div>Sunset: ${sunData.results.sunset}</div>
             <div>Day Length: ${sunData.results.day_length}</div>`
     $('.js-sun').html(sunResultText);
+}
+
+function displayQuoteData(quoteData) {
+    let quoteResultText = `
+    <p> " ${quoteData.quote.body}" -${quoteData.quote.author}`
+    $('.js-quotes').html(quoteResultText);
 }
 
 
@@ -116,6 +108,7 @@ function watchSubmit() {
     });
     // getDesignDataFromAPI(displayDesignData);
         getSunDataFromAPI(displaySunData);
+        getDesignDataFromAPI(displayQuoteData);
     
 
 }

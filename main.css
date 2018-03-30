@@ -22,13 +22,13 @@
   }
 
 .js-quotes {
- text-align: center;
- border: 1px solid grey;
- display: block;
- padding: 15px;
+text-align: center;
+border: 1px solid grey;
+display: block;
+padding: 15px;
 margin-left: 20px;
 margin-right: 20px;
-margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
   /* .js-news {
