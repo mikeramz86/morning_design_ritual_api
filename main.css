@@ -8,39 +8,39 @@
 
 
 
-  body {
-    position: relative;
-  }
+body {
+  position: relative;
+}
 
-  header {
-    position: relative;
-    display: block;
-    padding: 15px;
-    margin-bottom: 50px;
-    background-color: #d9a881;
-    color: white;
-  }
+header {
+  position: relative;
+  display: block;
+  padding: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  background-color: #d9a881;
+  color: white;
+}
 
 .js-quotes {
-text-align: center;
-border: 1px solid grey;
-display: block;
-padding: 15px;
-margin-left: 20px;
-margin-right: 20px;
+  text-align: center;
+  display: block;
+  padding: 15px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 20px;
 }
 
-  /* .js-news {
-  } */
+.quote {
+  border: 1px solid grey;
+}
 
-
-  form {
-    border: 1px solid grey;
-    display: block;
-    padding: 15px;
-    margin-left: 20px;
-  }
+form {
+  display: block;
+  padding: 15px;
+  margin-left: 20px;
+}
 
   .js-sun {
     display: block;
