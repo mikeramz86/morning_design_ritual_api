@@ -39,12 +39,13 @@ function getSunDataFromAPI(callback) {
         data: {
          lat: 45.5202,
          lng: -122.6742,
-         date: 'today'
+         date: 'today',
+         formatted: 0
         },
         dataType: 'json',
         type: 'GET',
         success: callback,
-        formatted: 0
+        
     };
 
     $.ajax(settings);
@@ -75,9 +76,15 @@ function renderDesignResult(designResult) {
 //     moment.utc(time).toDate();
 // }
 
-function convertToPst(time) {
-    moment.tz('2015-05-21T05:05:35+00:00', "America/Los_Angeles").format('MM-DD-YYYY hh:mmA');
+
+
+function convertToPst() {
+    moment.tz.add('America/Los_Angeles|PST PDT|80 70|0101|1Lzm0 1zb0 Op0');
+    moment.tz('2015-05-21T05:05:35+00:00', "America/Los_Angeles").format('hh:mmA');
 }
+
+// let convertToPst = moment.tz('2015-05-21T05:05:35+00:00', "America/Los_Angeles").format('hh:mmA');
+
 
 function displayNewsData(data) {
     const showResults = data.response.results.map((item, index) => renderResult(item));
@@ -86,6 +93,7 @@ function displayNewsData(data) {
 
 
 function displaySunData(sunData) {
+    console.log(convertToPst);
     const convertedSunrise = convertToPst(sunData.results.sunrise);
     const convertedSunset = convertToPst(sunData.results.sunset);
     let sunResultText = `
