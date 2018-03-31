@@ -43,7 +43,8 @@ function getSunDataFromAPI(callback) {
         },
         dataType: 'json',
         type: 'GET',
-        success: callback
+        success: callback,
+        formatted: 0
     };
 
     $.ajax(settings);
@@ -69,9 +70,13 @@ function renderDesignResult(designResult) {
 
 /* ---------------------------------------DISPLAY DATA-------------------------------------------- */
 
+// function convertToPst(time) {
+//     console.log(time);
+//     moment.utc(time).toDate();
+// }
+
 function convertToPst(time) {
-    console.log(time);
-    moment.utc(time).toDate();
+    moment.tz('2015-05-21T05:05:35+00:00', "America/Los_Angeles").format('MM-DD-YYYY hh:mmA');
 }
 
 function displayNewsData(data) {
@@ -120,11 +125,9 @@ function watchSubmit() {
         queryTarget.val("");
         getDataFromApi(query, displayNewsData);
     });
-    // getDesignDataFromAPI(displayDesignData);
         getSunDataFromAPI(displaySunData);
         getDesignDataFromAPI(displayQuoteData);
     
-
 }
 
 $(watchSubmit);
