@@ -12,6 +12,11 @@
 body {
   position: relative;
   background-color: #ece9e4;
+  background: url('https://i.imgur.com/J3Le9Aw.jpg') no-repeat /* center center */ fixed;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 
 header {
@@ -85,6 +90,11 @@ input {
     margin-left: 20px;
     padding: 15px;
   }
+
+button:hover, button:focus {
+  background-color: #ffd95c;
+  color: white;
+}
 
   /* .results {
     display: block;
