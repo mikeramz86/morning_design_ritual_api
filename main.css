@@ -96,11 +96,15 @@ input {
     background-color:#ece9e4;
   
   }
+
+  .result {
+    margin-top: 5px;
+    padding: 15px;
+  }
+
   .result:hover, button:focus  {
     display: block;
     background-color: white;
-    padding: 15px;
-    margin-top: 5px;
   }
 
 /* button:hover, button:focus {

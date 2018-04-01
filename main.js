@@ -78,16 +78,31 @@ function renderDesignResult(designResult) {
 
 
 
-function convertToPst(time) {
-    console.log(time);
-    moment.tz.add('America/Los_Angeles|PST PDT|80 70|0101|1Lzm0 1zb0 Op0');
-    // moment.tz(time, "America/Los_Angeles").format('hh:mmA');
-    moment.tz('2015-05-21T05:05:35+00:00', "America/Los_Angeles").format('hh:mmA');
-    console.log(moment.tz());
+// function convertToPst(time) {
+//     console.log(time);
+//     moment.tz.add('America/Los_Angeles|PST PDT|80 70|0101|1Lzm0 1zb0 Op0');
+//     // mom
+// ent.tz(time, "America/Los_Angeles").format('hh:mmA');
+//     moment.tz('2015-05-21T05:05:35+00:00', "America/Los_Angeles").format('hh:mmA');
+//     console.log(moment.tz());
+// }
 
+function convertToPst(dateString) {
+    const test = new Date();
+console.log(test);
+
+// Better option 2
+
+    console.log(dateString);
+    const parseDate = new Date(dateString)
+    console.log(parseDate,'this is parseDate')
+    const pst = parseDate.toLocaleString("en-US", {timeZone: "America/Los_Angeles", hour:'numeric', minute: 'numeric'});
+    console.log(pst, 'this is pst');
+    return pst;
 }
 
-// let convertToPst = moment.tz('2015-05-21T05:05:35+00:00', "America/Los_Angeles").format('hh:mmA');
+
+
 
 
 function displayNewsData(data) {
