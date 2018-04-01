@@ -12,7 +12,7 @@ function getDataFromApi(searchTerm, callback) {
         data: {
             q: `${searchTerm}`,
             'api-key': 'bbf4d829-c55d-4dca-b2d3-addc895cb3d2',
-            total: 4
+            'page-size': 5
         },
         dataType: 'json',
         type: 'GET',
@@ -40,7 +40,7 @@ function getSunDataFromAPI(callback) {
          lat: 45.5202,
          lng: -122.6742,
          date: 'today',
-         formatted: 0
+        //  formatted: 0
         },
         dataType: 'json',
         type: 'GET',
@@ -54,7 +54,7 @@ function getSunDataFromAPI(callback) {
 /* ---------------------------------------RENDER RESULTS-------------------------------------------- */
 function renderResult(result) {
     return `
-            <div class="js-news"> 
+            <div class="result"> 
                 <a href="${result.webUrl}" target="_blank">${result.webTitle}</a>
             </div>
             `;
@@ -139,5 +139,3 @@ function watchSubmit() {
 }
 
 $(watchSubmit);
-
-// $(displayQuote);
