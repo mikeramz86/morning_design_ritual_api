@@ -71,22 +71,6 @@ function renderDesignResult(designResult) {
 
 /* ---------------------------------------DISPLAY DATA-------------------------------------------- */
 
-// function convertToPst(time) {
-//     console.log(time);
-//     moment.utc(time).toDate();
-// }
-
-
-
-// function convertToPst(time) {
-//     console.log(time);
-//     moment.tz.add('America/Los_Angeles|PST PDT|80 70|0101|1Lzm0 1zb0 Op0');
-//     // mom
-// ent.tz(time, "America/Los_Angeles").format('hh:mmA');
-//     moment.tz('2015-05-21T05:05:35+00:00', "America/Los_Angeles").format('hh:mmA');
-//     console.log(moment.tz());
-// }
-
 function convertToPst(dateString) {
     const test = new Date();
 console.log(test);
@@ -102,9 +86,6 @@ console.log(test);
 }
 
 
-
-
-
 function displayNewsData(data) {
     const showResults = data.response.results.map((item, index) => renderResult(item));
     $('.js-news').html(showResults);
@@ -117,8 +98,7 @@ function displaySunData(sunData) {
     let sunResultText = `
             <h3> Mindful Day </h3>
             <div class="sun rise">Sunrise: ${convertedSunrise}</div>
-            <div class="sun set">Sunset : ${convertedSunset}</div>
-            <div class="sun day">Day Length : ${sunData.results.day_length}</div>`
+            <div class="sun set">Sunset : ${convertedSunset}</div>`
     $('.js-sun').html(sunResultText);
 }
 
