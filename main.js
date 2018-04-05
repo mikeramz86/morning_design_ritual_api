@@ -1,7 +1,7 @@
 
 
 
-const NEWS_SEARCH_URL = 'http://content.guardianapis.com/search';
+const NEWS_SEARCH_URL = 'https://content.guardianapis.com/search';
 const QUOTE_URL = 'https://favqs.com/api/qotd';
 const SUNRISE_SUNSET_URL = 'https://api.sunrise-sunset.org/json';
 
