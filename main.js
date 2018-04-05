@@ -37,15 +37,15 @@ function getSunDataFromAPI(callback) {
     const settings = {
         url: SUNRISE_SUNSET_URL,
         data: {
-         lat: 45.5202,
-         lng: -122.6742,
-         date: 'today',
-         formatted: 0
+            lat: 45.5202,
+            lng: -122.6742,
+            date: 'today',
+            formatted: 0
         },
         dataType: 'json',
         type: 'GET',
         success: callback,
-        
+
     };
 
     $.ajax(settings);
@@ -69,22 +69,17 @@ function renderDesignResult(designResult) {
 }
 
 
-/* ---------------------------------------DISPLAY DATA-------------------------------------------- */
+/* ---------------------------------------Converting UTC to PST-------------------------------------------- */
 
 function convertToPst(dateString) {
     const test = new Date();
-console.log(test);
-
-// Better option 2
-
-    console.log(dateString);
     const parseDate = new Date(dateString)
-    console.log(parseDate,'this is parseDate')
-    const pst = parseDate.toLocaleString("en-US", {timeZone: "America/Los_Angeles", hour:'numeric', minute: 'numeric'});
-    console.log(pst, 'this is pst');
+    const pst = parseDate.toLocaleString("en-US", { timeZone: "America/Los_Angeles", hour: 'numeric', minute: 'numeric' });
     return pst;
 }
 
+
+/* ---------------------------------------DISPLAY DATA-------------------------------------------- */
 
 function displayNewsData(data) {
     const showResults = data.response.results.map((item, index) => renderResult(item));
@@ -123,9 +118,9 @@ function watchSubmit() {
         queryTarget.val("");
         getDataFromApi(query, displayNewsData);
     });
-        getSunDataFromAPI(displaySunData);
-        getDesignDataFromAPI(displayQuoteData);
-    
+    getSunDataFromAPI(displaySunData);
+    getDesignDataFromAPI(displayQuoteData);
+
 }
 
 $(watchSubmit);
