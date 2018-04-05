@@ -59,66 +59,60 @@ form {
   border: 1px solid grey;
 }
 
-  .js-sun {
-    display: block;
-    background-color:#e3d5c6;
-    padding: 15px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-  }
+.js-sun {
+  display: block;
+  background-color:#e3d5c6;
+  padding: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
 
-  .js-search-form {
-    display: block;
-  }
+.js-search-form {
+  display: block;
+}
 
-  input button {
-    display: block;
-    margin: 5px;
-    padding: 10px;
-  }
+input button {
+  display: block;
+  margin: 5px;
+  padding: 10px;
+}
+
 input {
   padding: 5px;
 }
-  button {
-    padding: 5px;
-    background-color: #d9a881;
-  }
 
-  .sun {
-    margin-top: 15px;
-  }
+button {
+  padding: 5px;
+  background-color: #d9a881;
+}
 
-  .js-news {
-    display: block;
-    margin-left: 20px;
-    padding: 15px;
-    background-color:#ece9e4;
+.sun {
+  margin-top: 15px;
+}
+
+.js-news {
+  display: block;
+  margin-left: 20px;
+  padding: 15px;
+  background-color:#ece9e4;
   
-  }
+}
 
-  .result {
-    margin-top: 5px;
-    padding: 15px;
-  }
+.result {
+  margin-top: 5px;
+  padding: 15px;
+}
 
-  .result:hover, button:focus  {
-    display: block;
-    background-color: white;
-  }
+.result:hover, button:focus  {
+  display: block;
+  background-color: white;
+}
 
-/* button:hover, button:focus {
-  background-color: #ffd95c;
-  color: white;
-} */
+
 
 a:link {
   color: black;
   text-decoration: none;
-
-
 }
 
-  /* .results {
-    display: block;
-  } */
