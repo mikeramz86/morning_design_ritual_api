@@ -102,14 +102,6 @@ function displaySunData(sunData) {
     $('.js-sun').html(sunResultText);
 }
 
-// function displaySunData(sunData) {
-//     let sunResultText = `
-//             <h3> Mindful Day </h3>
-//             <div class="sun rise">Sunrise: ${sunData.results.sunrise}</div>
-//             <div class="sun set">Sunset : ${sunData.results.sunset}</div>
-//             <div class="sun day">Day Length : ${sunData.results.day_length}</div>`
-//     $('.js-sun').html(sunResultText);
-// }
 
 function displayQuoteData(quoteData) {
     let quoteResultText = `
