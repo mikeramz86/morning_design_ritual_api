@@ -61,13 +61,6 @@ function renderResult(result) {
 
 }
 
-function renderDesignResult(designResult) {
-    console.log(designResult);
-    return `
-        result[0].content + "<p>— " + results[0].title + "</p>
-    `
-}
-
 
 /* ---------------------------------------Converting UTC to PST-------------------------------------------- */
 
