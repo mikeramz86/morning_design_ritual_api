@@ -71,19 +71,18 @@ h3 {
   margin-bottom: 20px;
 }
 
-.box {
-  /* display: flex; */
-}
 
 .day {
-  border: 1px solid grey;
-  /* display: block; */
+  border: 3px solid grey;
+  border-radius: 9px;
   padding: 20px;
 }
 
 .news {
   /* margin-top: 40px; */
-  border: 1px solid grey;
+  border: 3px solid grey;
+  border-radius: 9px;
+
 
 }
 
@@ -179,6 +178,16 @@ a:link {
 
   }
 
+}
+
+
+button:hover {
+  background: white;
+}
+
+input {
+  border: 1px solid grey;
+  border-radius: 2px;
 }
 
 @media only screen and (max-witdh: 1199){
