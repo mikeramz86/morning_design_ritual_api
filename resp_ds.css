@@ -1,7 +1,9 @@
 /* -------------------------------------------- Responsive Grid ------------------------------------------ */
 
+
+
 .row {
-  max-width: 900px;
+  /* max-width: 900px; */
   padding-left: 20px;
   padding-right: 20px;
   margin: 0 auto;
@@ -59,3 +61,4 @@
     width: 100%;
   }
 }
+
