@@ -85,6 +85,7 @@ function displaySunData(sunData) {
     const convertedSunset = convertToPst(sunData.results.sunset);
     let sunResultText = `
             <h3> Mindful Day (Portland, OR) </h3>
+            <hr class="line">
             <div class="sun rise">Sunrise: ${convertedSunrise}</div>
             <div class="sun set">Sunset : ${convertedSunset}</div>`
     $('.js-sun').html(sunResultText);

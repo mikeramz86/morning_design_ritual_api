@@ -13,29 +13,43 @@ body {
   position: relative;
   background-color: #ece9e4;
   background: url('https://i.imgur.com/J3Le9Aw.jpg') no-repeat /* center center */ fixed;
-  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+  background-size: cover;
 }
 
 header {
-  position: relative;
-  display: block;
-  padding: 15px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50px;
-  background-color: #573718;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  top: 0;
+  background: #573718;
   color: white;
+}
+
+main {
+  margin-top: 100px;
+}
+
+h1 {
+  padding: 10px;
 }
 
 h3 {
   font-size: 1em;
   font-weight: bold;
-  margin-bottom: 40px;
 }
 
+.line {
+  margin-top: 7.5px;
+  margin-bottom: 7.5px;
+}
 .quote {
   text-align: center;
   display: block;
@@ -43,6 +57,9 @@ h3 {
 }
 
 .rituals {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
 }
 
 .js-quotes {
@@ -164,10 +181,22 @@ a:link {
 
 }
 
+@media only screen and (max-witdh: 1199){
+  .day {
+    margin-bottom: 20px;
+  }
+}
 
-@media only screen and (max-width: 320px) {
+
+@media only screen and (max-width: 640px) {
+  .rituals {
+    margin-bottom: 40px;
+  }
+
+
   .day {
     width: 100%;
+    margin-bottom: 20px;
   }
 
   .news {
