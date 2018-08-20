@@ -191,10 +191,16 @@ input {
 }
 
 @media only screen and (max-witdh: 1199){
+  .rituals {
+    margin-bottom: 40px;
+  }
+
   .day {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
 }
+
+
 
 
 @media only screen and (max-width: 640px) {
@@ -210,7 +216,7 @@ input {
 
   .day {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
 
   .news {
