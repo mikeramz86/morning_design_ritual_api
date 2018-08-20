@@ -198,6 +198,11 @@ input {
 
 
 @media only screen and (max-width: 640px) {
+
+  * {
+    font-size: 30px;
+  }
+
   .rituals {
     margin-bottom: 40px;
   }
@@ -210,6 +215,12 @@ input {
 
   .news {
     width: 100%;
+    font-size: 100px;
+
+  }
+
+  input {
+    width: 100%
   }
 }
 
